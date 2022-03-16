@@ -1,24 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField] GameObject[] Pelotas;
+    [SerializeField] TMP_Dropdown lstNumeroPelotas;
     Vector3 randomPos;
+    int Indice;
+    [SerializeField] int numPelotas;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            SpawnPelotas(3);
-        }
+        Indice = lstNumeroPelotas.value;
+        indexLst(Indice);
+        SpawnPelotas(numPelotas);
     }
 
     private void SpawnPelotas(int numeroPelotas)
@@ -29,5 +27,22 @@ public class SpawnManager : MonoBehaviour
             Instantiate(Pelotas[Random.Range(0, Pelotas.Length)], randomPos, Quaternion.identity);
         }
         
+    }
+
+    private void indexLst(int Index)
+    {
+
+        switch (Index)
+        {
+            case 0:
+                numPelotas = 3;
+                break;
+            case 1:
+                numPelotas = 6;
+                break;
+            case 2:
+                numPelotas = 9;
+                break;
+        }
     }
 }

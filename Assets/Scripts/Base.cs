@@ -5,7 +5,7 @@ using UnityEngine;
 public class Base : MonoBehaviour
 {
     [SerializeField] string color;
-    [SerializeField] int puntos;
+    [SerializeField] public int puntos;
     int indexColor;
     GameManager GameManager;
     // Start is called before the first frame update
@@ -14,11 +14,6 @@ public class Base : MonoBehaviour
         GameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();   
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
