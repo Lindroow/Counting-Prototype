@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float rotacion;
     [SerializeField] Animator compuertaDer;
     [SerializeField] Animator compuertaIzq;
-    [SerializeField] public bool compuertasAbieras = false;
+    [SerializeField] public bool compuertaIzqAbierta = false;
+    [SerializeField] public bool compuertaDerAbierta = false;
     
 
     // Update is called once per frame
@@ -29,21 +30,21 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             compuertaDer.SetBool("CompuertaAbierta", true);
-            compuertasAbieras = true;
+            compuertaDerAbierta = true;
         }else
         {
             compuertaDer.SetBool("CompuertaAbierta", false);
-            compuertasAbieras = false;
+            compuertaDerAbierta = false;
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {
             compuertaIzq.SetBool("CompuertaIzqAbierta", true);
-            compuertasAbieras = true;
+            compuertaIzqAbierta = true;
         }
         else
         {
             compuertaIzq.SetBool("CompuertaIzqAbierta", false);
-            compuertasAbieras = false;
+            compuertaIzqAbierta = false;
         }
 
 

@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         pelotasVerdes = GameObject.FindGameObjectsWithTag("Verde").Length;
         pelotasRojas = GameObject.FindGameObjectsWithTag("Rojo").Length;
         pelotasTotales = pelotasVerdes + pelotasNaranjas + pelotasRojas;
-        if (pelotasVerdes == BaseVerde.puntos && pelotasNaranjas == BaseNaranja.puntos && pelotasRojas == BaseRoja.puntos && enJuego && pelotasTotales != 0 && !playerController.compuertasAbieras)
+        if (pelotasVerdes == BaseVerde.puntos && pelotasNaranjas == BaseNaranja.puntos && pelotasRojas == BaseRoja.puntos && enJuego && pelotasTotales != 0 && !playerController.compuertaDerAbierta && !playerController.compuertaIzqAbierta)
         {
             victoria.SetActive(true);
         }
